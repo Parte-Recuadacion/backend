@@ -1,0 +1,146 @@
+[
+  {
+    "model": "listado_provincia",
+    "pk": 1,
+    "fields": {
+      "dpa": "2100",
+      "nombre": "Pinar del Río",
+      "actualizado": "False"
+
+    }
+  },
+  {
+    "model": "listado_provincia",
+    "pk": 2,
+    "fields": {
+      "dpa": "2200",
+      "nombre": "Artemisa",
+      "actualizado": "False"
+    }
+  },
+  {
+    "model": "listado_provincia",
+    "pk": 3,
+    "fields": {
+      "dpa": "2300",
+      "nombre": "La Habana",
+      "actualizado": "False"
+    }
+  },
+  {
+  "model": "listado_provincia",
+    "pk": 4,
+    "fields": {
+      "dpa": "2400",
+      "nombre": "Mayabeque",
+      "actualizado": "False"
+    }
+  },
+  {
+    "model": "listado_provincia",
+    "pk": 5,
+    "fields": {
+      "dpa": "2500",
+      "nombre": "Matanzas",
+      "actualizado": "False"
+  }
+  },
+  {
+    "model": "listado_provincia",
+    "pk": 6, "fields": {
+      "dpa": "2600",
+      "nombre": "Villa Clara",
+      "actualizado": "False"
+  }
+  },
+  {
+  "model": "listado_provincia",
+  "pk": 7,
+  "fields": {
+      "dpa": "2700",
+      "nombre": "Cienfuegos",
+      "actualizado": "False"
+  }
+},
+  {
+  "model": "listado_provincia",
+  "pk": 8,
+  "fields": {
+      "dpa": "2800",
+      "nombre": "Santic Spiritus",
+      "actualizado": "False"
+  }
+},
+  {
+  "model": "listado_provincia",
+  "pk": 9,
+  "fields": {
+      "dpa": "2900",
+      "nombre": "Ciego de Ávila",
+      "actualizado": "False"
+  }
+},
+  {
+  "model": "listado_provincia",
+  "pk": 10,
+  "fields": {
+      "dpa": "3000",
+      "nombre": "Camagüey",
+      "actualizado": "False"
+  }
+},
+  {
+    "model": "listado_provincia",
+    "pk": 11,
+    "fields": {
+      "dpa": "3100",
+      "nombre": "Las Tunas",
+      "actualizado": "False"
+    }
+  },
+  {
+    "model": "listado_provincia",
+    "pk": 12,
+    "fields": {
+      "dpa": "3200",
+      "nombre": "Holguín",
+      "actualizado": "False"
+    }
+  },
+  {
+    "model": "listado_provincia",
+    "pk": 13,
+    "fields": {
+      "dpa": "3300",
+      "nombre": "Granma",
+      "actualizado": "False"
+    }
+  },
+  {
+    "model": "listado_provincia",
+    "pk": 14,
+    "fields": {
+      "dpa": "3400",
+      "nombre": "Santiago de Cuba",
+      "actualizado": "False"
+    }
+  },
+  {
+    "model": "listado_provincia",
+  "pk": 15,
+  "fields": {
+      "dpa": "3500",
+      "nombre": "Guantánamo",
+      "actualizado": "False"
+  }
+},
+  {
+    "model": "listado_provincia",
+    "pk": 16,
+    "fields": {
+      "dpa": "4000",
+      "nombre": "Isla de la Juventud",
+      "actualizado": "False"
+    }
+  }
+]
