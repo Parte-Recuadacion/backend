@@ -66,10 +66,10 @@ class DeletedModel(models.Model):
 
 
 class PresupuestoGlobal(models.Model):
-    pg_real_mes = models.CharField(max_length=25, blank=True, null=True)
-    pg_real_acomulado = models.CharField(max_length=25, blank=True, null=True)
-    pg_estimado_mes = models.CharField(max_length=25, blank=True, null=True)
-    pg_estimado_cierre_anno = models.CharField(max_length=25, blank=True, null=True)
+    pg_real_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    pg_real_acomulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    pg_estimado_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    pg_estimado_cierre_anno = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
 
     class Meta:
         db_table = 'presupuesto_global'
@@ -78,10 +78,10 @@ class PresupuestoGlobal(models.Model):
 
 
 class PresupuestoCentral(models.Model):
-    pc_real_mes = models.CharField(max_length=25, blank=True, null=True)
-    pc_real_acomulado = models.CharField(max_length=25, blank=True, null=True)
-    pc_estimado_mes = models.CharField(max_length=25, blank=True, null=True)
-    pc_estimado_cierre_anno = models.CharField(max_length=25, blank=True, null=True)
+    pc_real_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    pc_real_acomulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    pc_estimado_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    pc_estimado_cierre_anno = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
 
     class Meta:
         db_table = 'presupuesto_central'

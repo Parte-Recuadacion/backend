@@ -17,16 +17,16 @@ class InsertData(graphene.Mutation):
         enviado_esta_semana = graphene.Boolean(required=True)
 
         # presupuesto global relacion
-        pg_real_mes = graphene.String(required=True)
-        pg_real_acomulado = graphene.String(required=True)
-        pg_estimado_mes = graphene.String(required=True)
-        pg_estimado_cierre_anno = graphene.String()
+        pg_real_mes = graphene.Float(required=True)
+        pg_real_acomulado = graphene.Float(required=True)
+        pg_estimado_mes = graphene.Float(required=True)
+        pg_estimado_cierre_anno = graphene.Float()
 
         # presupuesto central relacion
-        pc_real_mes = graphene.String(required=True)
-        pc_real_acomulado = graphene.String(required=True)
-        pc_estimado_mes = graphene.String(required=True)
-        pc_estimado_cierre_anno = graphene.String()
+        pc_real_mes = graphene.Float(required=True)
+        pc_real_acomulado = graphene.Float(required=True)
+        pc_estimado_mes = graphene.Float(required=True)
+        pc_estimado_cierre_anno = graphene.Float()
 
     def mutate(self, info, dpa, nombre, enviado_a, mes, anno, enviado_esta_semana, pg_real_mes, pg_real_acomulado,
                pg_estimado_mes, pg_estimado_cierre_anno, pc_real_mes, pc_real_acomulado, pc_estimado_mes,

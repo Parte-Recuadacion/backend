@@ -11,8 +11,9 @@ class getProvinceData(graphene.Mutation):
     class Arguments:
         mes = graphene.String(required=True)
         anno = graphene.String(required=True)
+        provincia = graphene.String(required=True)
 
-    def mutate(self, info, mes, anno):
+    def mutate(self, info, provincia, mes, anno):
         global province
-        province = Provincia.objects.filter(mes=mes, anno=anno).order_by('dpa')
+        province = Provincia.objects.filter(nombre=provincia, mes=mes, anno=anno)
         return getProvinceData(status='ok', province=province)
