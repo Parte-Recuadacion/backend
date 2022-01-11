@@ -1,6 +1,4 @@
 import graphene
-
-from backend.apps.types import ListadoProvinciaType
 from backend.apps.core.models import ListadoProvincia
 
 

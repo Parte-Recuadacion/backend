@@ -1,5 +1,4 @@
 import graphene
-
 from backend.apps.types import ProvinciaType
 from backend.apps.core.models import Provincia, PresupuestoGlobal, PresupuestoCentral, ListadoProvincia
 
