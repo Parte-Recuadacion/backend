@@ -1,6 +1,6 @@
 [
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 1,
     "fields": {
       "dpa": "2100",
@@ -10,7 +10,7 @@
     }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 2,
     "fields": {
       "dpa": "2200",
@@ -19,7 +19,7 @@
     }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 3,
     "fields": {
       "dpa": "2300",
@@ -28,7 +28,7 @@
     }
   },
   {
-  "model": "listado_provincia",
+  "model": "core.ListadoProvincia",
     "pk": 4,
     "fields": {
       "dpa": "2400",
@@ -37,7 +37,7 @@
     }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 5,
     "fields": {
       "dpa": "2500",
@@ -46,7 +46,7 @@
   }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 6, "fields": {
       "dpa": "2600",
       "nombre": "Villa Clara",
@@ -54,7 +54,7 @@
   }
   },
   {
-  "model": "listado_provincia",
+  "model": "core.ListadoProvincia",
   "pk": 7,
   "fields": {
       "dpa": "2700",
@@ -63,7 +63,7 @@
   }
 },
   {
-  "model": "listado_provincia",
+  "model": "core.ListadoProvincia",
   "pk": 8,
   "fields": {
       "dpa": "2800",
@@ -72,7 +72,7 @@
   }
 },
   {
-  "model": "listado_provincia",
+  "model": "core.ListadoProvincia",
   "pk": 9,
   "fields": {
       "dpa": "2900",
@@ -81,7 +81,7 @@
   }
 },
   {
-  "model": "listado_provincia",
+  "model": "core.ListadoProvincia",
   "pk": 10,
   "fields": {
       "dpa": "3000",
@@ -90,7 +90,7 @@
   }
 },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 11,
     "fields": {
       "dpa": "3100",
@@ -99,7 +99,7 @@
     }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 12,
     "fields": {
       "dpa": "3200",
@@ -108,7 +108,7 @@
     }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 13,
     "fields": {
       "dpa": "3300",
@@ -117,7 +117,7 @@
     }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 14,
     "fields": {
       "dpa": "3400",
@@ -126,7 +126,7 @@
     }
   },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
   "pk": 15,
   "fields": {
       "dpa": "3500",
@@ -135,7 +135,7 @@
   }
 },
   {
-    "model": "listado_provincia",
+    "model": "core.ListadoProvincia",
     "pk": 16,
     "fields": {
       "dpa": "4000",
