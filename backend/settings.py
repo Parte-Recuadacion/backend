@@ -162,28 +162,28 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.oracle',
-#         'NAME': 'orcl',
-#         'HOST': '192.168.8.29',
-#         'USER': 'recaemb',
-#         'PASSWORD': 'recaemb123',
-#         'PORT': '1521',
-#         'SCHEMAS': ['RECA', 'INFOGESTI']
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'parte_bd',
-        'USER': 'edward',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'orcl',
+        'HOST': '192.168.8.29',
+        'USER': 'partedb',
+        'PASSWORD': 'parte123',
+        'PORT': '1521',
+        'SCHEMA': 'Parte_Recuadacion'
     }
 }
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'parte_bd',
+#         'USER': 'edward',
+#         'PASSWORD': '123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 CHANNEL_LAYERS = {
     'default': {
