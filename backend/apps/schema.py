@@ -2,7 +2,7 @@ import graphene
 from graphene_django.types import ObjectType
 from backend.apps.api.mutations import getProvinceData, InsertData, resetProvinceList, resetProvince
 from backend.apps.api.queries.province import getProvinceMissing
-from backend.apps.types import ProvinciaType, PresupuestoCentralType, PresupuestoGlobalType
+from backend.apps.types import ProvinciaType, PresupuestoCentralType, PresupuestoSeguridadSocialType, PresupuestoLocalType
 
 
 class Mutation(
@@ -17,6 +17,6 @@ class Mutation(
 class Query(getProvinceMissing, ObjectType): pass
 
 
-types = [ProvinciaType, PresupuestoCentralType, PresupuestoGlobalType]
+types = [ProvinciaType, PresupuestoCentralType, PresupuestoSeguridadSocialType, PresupuestoLocalType]
 
 schema = graphene.Schema(query=Query, mutation=Mutation, types=types)

@@ -65,35 +65,58 @@ class DeletedModel(models.Model):
         self.save()
 
 
-class PresupuestoGlobal(models.Model):
-    pg_real_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
-    pg_real_acomulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
-    pg_estimado_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
-    pg_estimado_cierre_anno = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
-
-    class Meta:
-        db_table = 'presupuesto_global'
-        verbose_name = 'presupuesto_global'
-        verbose_name_plural = 'presupuesto_globales'
-
-
 class PresupuestoCentral(models.Model):
-    pc_real_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
-    pc_real_acomulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
-    pc_estimado_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
-    pc_estimado_cierre_anno = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    central_plan_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    central_plan_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    central_real_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    central_real_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    central_estimado_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    central_estimado_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
 
     class Meta:
         db_table = 'presupuesto_central'
         verbose_name = 'presupuesto_central'
-        verbose_name_plural = 'presupuesto_centrales'
+        verbose_name_plural = 'presupuestos_centrales'
+
+
+class PresupuestoSeguridadSocial(models.Model):
+    social_plan_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    social_plan_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    social_real_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    social_real_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    social_estimado_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    social_estimado_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+
+    class Meta:
+        db_table = 'presupuesto_social'
+        verbose_name = 'presupuesto_social'
+        verbose_name_plural = 'presupuestos_sociales'
+
+
+class PresupuestoLocal(models.Model):
+    local_plan_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    local_plan_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    local_real_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    local_real_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    local_estimado_mes = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+    local_estimado_acumulado = models.DecimalField(max_digits=25, blank=True, null=True, decimal_places=1)
+
+    class Meta:
+        db_table = 'presupuesto_local'
+        verbose_name = 'presupuesto_local'
+        verbose_name_plural = 'presupuestos_locales'
 
 
 class Provincia(models.Model):
-    presupuesto_global = models.ForeignKey(PresupuestoGlobal, on_delete=models.CASCADE,
-                                           verbose_name='Presupuesto Global', null=True)
     presupuesto_central = models.ForeignKey(PresupuestoCentral, on_delete=models.CASCADE,
                                             verbose_name='Presupuesto Central', null=True)
+
+    presupuesto_seguridad_social = models.ForeignKey(PresupuestoSeguridadSocial, on_delete=models.CASCADE,
+                                                     verbose_name='Presupuesto Seguridad Social', null=True)
+
+    presupuesto_local = models.ForeignKey(PresupuestoLocal, on_delete=models.CASCADE,
+                                          verbose_name='Presupuesto Local', null=True)
+
     dpa = models.CharField(max_length=4, null=True, blank=True)
     nombre = models.CharField(max_length=25)
     enviado_a = models.DateTimeField(null=True, blank=True)

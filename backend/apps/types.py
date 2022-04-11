@@ -12,11 +12,16 @@ class ProvinciaType(DjangoObjectType):
         model = models.Provincia
 
 
-class PresupuestoGlobalType(DjangoObjectType):
-    class Meta:
-        model = models.PresupuestoGlobal
-
-
 class PresupuestoCentralType(DjangoObjectType):
     class Meta:
         model = models.PresupuestoCentral
+
+
+class PresupuestoSeguridadSocialType(DjangoObjectType):
+    class Meta:
+        model = models.PresupuestoSeguridadSocial
+
+
+class PresupuestoLocalType(DjangoObjectType):
+    class Meta:
+        model = models.PresupuestoLocal

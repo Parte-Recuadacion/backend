@@ -1,6 +1,7 @@
 import graphene
 from backend.apps.types import ProvinciaType
-from backend.apps.core.models import Provincia, PresupuestoGlobal, PresupuestoCentral, ListadoProvincia
+from backend.apps.core.models import Provincia, PresupuestoCentral, PresupuestoSeguridadSocial, PresupuestoLocal, \
+    ListadoProvincia
 
 
 class InsertData(graphene.Mutation):
@@ -15,33 +16,73 @@ class InsertData(graphene.Mutation):
         anno = graphene.String(required=True)
         enviado_esta_semana = graphene.Boolean(required=True)
 
-        # presupuesto global relacion
-        pg_real_mes = graphene.Float(required=True)
-        pg_real_acomulado = graphene.Float(required=True)
-        pg_estimado_mes = graphene.Float(required=True)
-        pg_estimado_cierre_anno = graphene.Float()
-
         # presupuesto central relacion
-        pc_real_mes = graphene.Float(required=True)
-        pc_real_acomulado = graphene.Float(required=True)
-        pc_estimado_mes = graphene.Float(required=True)
-        pc_estimado_cierre_anno = graphene.Float()
+        central_plan_mes = graphene.Float(required=True)
+        central_plan_acumulado = graphene.Float(required=True)
+        central_real_mes = graphene.Float(required=True)
+        central_real_acumulado = graphene.Float(required=True)
+        central_estimado_mes = graphene.Float(required=True)
+        central_estimado_acumulado = graphene.Float(required=True)
 
-    def mutate(self, info, dpa, nombre, enviado_a, mes, anno, enviado_esta_semana, pg_real_mes, pg_real_acomulado,
-               pg_estimado_mes, pg_estimado_cierre_anno, pc_real_mes, pc_real_acomulado, pc_estimado_mes,
-               pc_estimado_cierre_anno):
+        # presupuesto seguridad social relacion
+        social_plan_mes = graphene.Float(required=True)
+        social_plan_acumulado = graphene.Float(required=True)
+        social_real_mes = graphene.Float(required=True)
+        social_real_acumulado = graphene.Float(required=True)
+        social_estimado_mes = graphene.Float(required=True)
+        social_estimado_acumulado = graphene.Float(required=True)
 
-        presupuesto_global = PresupuestoGlobal.objects.create(
-            pg_real_mes=pg_real_mes,
-            pg_real_acomulado=pg_real_acomulado,
-            pg_estimado_mes=pg_estimado_mes,
-            pg_estimado_cierre_anno=pg_estimado_cierre_anno
-        )
+        # presupuesto local
+        local_plan_mes = graphene.Float()
+        local_plan_acumulado = graphene.Float()
+        local_real_mes = graphene.Float()
+        local_real_acumulado = graphene.Float()
+        local_estimado_mes = graphene.Float()
+        local_estimado_acumulado = graphene.Float()
+
+    def mutate(self, info, dpa, nombre, enviado_a, mes, anno, enviado_esta_semana,
+               central_plan_mes,
+               central_plan_acumulado,
+               central_real_mes,
+               central_real_acumulado,
+               central_estimado_mes,
+               central_estimado_acumulado,
+               social_plan_mes,
+               social_plan_acumulado,
+               social_real_mes,
+               social_real_acumulado,
+               social_estimado_mes,
+               social_estimado_acumulado,
+               local_plan_mes,
+               local_plan_acumulado,
+               local_real_mes,
+               local_real_acumulado,
+               local_estimado_mes,
+               local_estimado_acumulado
+               ):
         presupuesto_central = PresupuestoCentral.objects.create(
-            pc_real_mes=pc_real_mes,
-            pc_real_acomulado=pc_real_acomulado,
-            pc_estimado_mes=pc_estimado_mes,
-            pc_estimado_cierre_anno=pc_estimado_cierre_anno
+            central_plan_mes=central_plan_mes,
+            central_plan_acumulado=central_plan_acumulado,
+            central_real_mes=central_real_mes,
+            central_real_acumulado=central_real_acumulado,
+            central_estimado_mes=central_estimado_mes,
+            central_estimado_acumulado=central_estimado_acumulado
+        )
+        presupuesto_seguridad_social = PresupuestoSeguridadSocial.objects.create(
+            social_plan_mes=social_plan_mes,
+            social_plan_acumulado=social_plan_acumulado,
+            social_real_mes=social_real_mes,
+            social_real_acumulado=social_real_acumulado,
+            social_estimado_mes=social_estimado_mes,
+            social_estimado_acumulado=social_estimado_acumulado,
+        )
+        presupuesto_local = PresupuestoLocal.objects.create(
+            local_plan_mes=local_plan_mes,
+            local_plan_acumulado=local_plan_acumulado,
+            local_real_mes=local_real_mes,
+            local_real_acumulado=local_real_acumulado,
+            local_estimado_mes=local_estimado_mes,
+            local_estimado_acumulado=local_estimado_acumulado,
         )
         province_data = Provincia.objects.create(
             dpa=dpa,
@@ -50,8 +91,9 @@ class InsertData(graphene.Mutation):
             mes=mes,
             anno=anno,
             enviado_esta_semana=enviado_esta_semana,
-            presupuesto_global=presupuesto_global,
-            presupuesto_central=presupuesto_central
+            presupuesto_central=presupuesto_central,
+            presupuesto_seguridad_social=presupuesto_seguridad_social,
+            presupuesto_local=presupuesto_local,
         )
         province_data.save()
         update_province = ListadoProvincia.objects.get(nombre=nombre)
